@@ -77,10 +77,11 @@ Q.5 Create a map with name, phone keys and store some values to it.
   info.removeWhere((key, value) {
     return key.length != 4;
   }); // Use where to find all keys that have length 4.
-  print(info); //print to find all keys that have length 4
+  print(
+      'The key that have length is ${info.keys}'); //print to find all keys that have length 4
   /*
   OutPut:
-  {name: Nabil}
+  The key that have length is (name)
 
   */
   /*
@@ -90,36 +91,32 @@ and using key, value pair assign country, capitalCity, currency and language to 
  Search for ".forEach()" mehtod and using it print all the value of world variable.
   */
   var world = {
-    1: "pakistan",
-    2: "india",
-    3: "china",
-    "pakistan_capital": "Islamabad",
-    "Pakistan_currency": "pakistani Rupee",
-    "pakistani_language": "Urdu",
-    "India's_capital": "Islamabad",
-    "india_currency": "indianRupee",
-    "india,s_language": "Hindhi",
-    "china_capital": "Islamabad",
-    "china_currency": "indianRupee",
-    "china_lanuage": "Chinees"
+    "Pakistan": {
+      'Capital City': 'Islamabad',
+      'Currency': 'Pakistani Rupee',
+      'language': 'Urdu'
+    },
+    "India": {
+      'Capital City': 'New Delhi',
+      'Currency': 'Indian Rupee',
+      'language': 'Hindi'
+    },
+    "China": {
+      'Capital City': 'Beijing',
+      'Currency': 'Renminbi',
+      'language': 'Mandarine'
+    },
   };
   print('all the values of world variable is');
   world.forEach((key, value) => print('$value'));
+
 /*
 OutPut:
 all the values of world variable is
-pakistan
-india
-china
-Islamabad
-pakistani Rupee
-Urdu
-Islamabad
-indianRupee
-Hindhi
-Islamabad
-indianRupee
-Chinees
+{Capital City: Islamabad, Currency: Pakistani Rupee, language: Urdu}
+{Capital City: New Delhi, Currency: Indian Rupee, language: Hindi}
+{Capital City: Beijing, Currency: Renminbi, language: Mandarine}
+
 */
 
 /*
@@ -144,7 +141,7 @@ then print the updated map mathMarks variable.
     'john': 15
   };
   mathMarks.removeWhere((key, value) {
-    return !(value <= 30);
+    return (value <= 30);
   }); //Using ".removeWhere()" method remove key, value where value <= 30
   print(mathMarks); //print the updated map mathMarks variable.
   /*
